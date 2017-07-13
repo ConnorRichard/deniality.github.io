@@ -20,6 +20,8 @@
 
 //We can make our own OpenState Function to return the value of the Lua State.
 
+DWORD rL;
+
 DWORD GlobalState(DWORD ScriptContext) {
 	int v50;
 	int v51;
@@ -32,4 +34,6 @@ DWORD GlobalState(DWORD ScriptContext) {
 	return v52;
 }
 
-We use lua_newthread to create a new thread for the new state.
+rL = GlobalState(ScriptContext);
+
+//We use lua_newthread to create a new thread for the new state.
